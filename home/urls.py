@@ -16,6 +16,11 @@ from django.contrib import admin
 from django.urls import path
 from home import views
 
+#Django admin customization
+admin.site.site_title="ToDoList"
+admin.site.site_header="Login to your admin"
+admin.site.index_title="Welcome to this portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
