@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'ToDoListDB',
         'USER':'postgres',
         'PASSWORD':'pratyush',
-        'HOST':'todolist-pratyush.herokuapp.com',
+        'HOST':'localhost',
     }
 }
 import dj_database_url
