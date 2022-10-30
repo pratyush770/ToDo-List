@@ -78,14 +78,16 @@ WSGI_APPLICATION = 'todolist.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'datem1o955omtq',
-        'USER':'fusquffdxnyyzg',
-        'PASSWORD':'ea68c326de728997772b3cdcfbc542964f24bf3478f7e059a6cc489fd68575e8',
-        'HOST':'ec2-44-210-228-110.compute-1.amazonaws.com',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ToDoListDB',
+        'USER':'postgres',
+        'PASSWORD':'pratyush',
+        'HOST':'localhost',
     }
 }
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation
