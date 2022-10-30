@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os 
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_*ov-%+q3h&u@($l=+ysni*24%(ll=v+gh9#mscz9#d*3v^su0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['todolist-pratyush.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -39,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'jquery',
 ]
 
 MIDDLEWARE = [
@@ -78,8 +78,11 @@ WSGI_APPLICATION = 'todolist.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ToDoListDB',
+        'USER':'postgres',
+        'PASSWORD':'pratyush',
+        'HOST':'localhost'
     }
 }
 
@@ -120,8 +123,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+STATIC_ROOT=os.path.join(BASE_DIR,'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Activate Django-Heroku
+django_heroku.settings(locals())
