@@ -1,0 +1,49 @@
+nav{
+    background:#212529;
+}
+.navbar-brand{
+    font-size:20px;
+}
+.nav-link{
+    font-size:18px;
+}
+h2{
+    text-align:center;
+}
+footer{
+    font-size:medium;
+    text-align:center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsiveness */
+
+
+/* for smartphones */
+@media only screen and (min-device-width:320px) and (max-device-width:480px){
+    h2{
+        font-size:21px;
+    }
+}
+
+/* for ipad devices */
+@media only screen and (min-device-width:700px) and (max-device-width:950px){
+    nav{
+        font-size:40px;
+    }
+    .navbar-brand{
+        font-size:40px;
+    }
+    .nav-link{
+        font-size:30px;
+    }
+    h2{
+        font-size:40px;
+    }
+    footer{
+        font-size:30px;
+    }
+}
